@@ -59,14 +59,12 @@
     transition: fill .35s ease, stroke .35s ease, filter .35s ease;
     outline: none;
   }
-  .spot.stem { fill: none; stroke-width: 80; pointer-events: stroke; stroke-linecap: round; }
   .spot:hover, .spot:focus-visible, .spot.active {
     fill: rgba(255,230,180,.14);
     stroke: var(--glow);
     filter: drop-shadow(0 0 14px var(--glow)) drop-shadow(0 0 40px var(--glow-soft));
     animation: breathe 2.2s ease-in-out infinite;
   }
-  .spot.stem:hover, .spot.stem:focus-visible, .spot.stem.active { fill: none; stroke: rgba(255,210,122,.55); }
   @keyframes breathe {
     0%, 100% { filter: drop-shadow(0 0 10px var(--glow)) drop-shadow(0 0 30px var(--glow-soft)); }
     50%      { filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 0 60px var(--glow-soft)); }
@@ -159,24 +157,13 @@
   <div class="frame" id="frame">
     <img src="cherries.jpg" alt="Two giant glossy cherries joined by a stem, standing in a glowing psychedelic forest at twilight." id="img">
     <svg viewBox="0 0 2576 1438" preserveAspectRatio="none" id="map" aria-label="Clickable regions of the image">
-      <!-- Sky and forest first so the cherries and stem sit on top -->
-      <polygon class="spot" data-id="sky" tabindex="0" role="button" aria-label="The spiral sky"
-        points="721,0 1829,0 1829,335 1713,670 1481,721 1288,721 1069,696 902,618 824,322"/>
-      <polygon class="spot" data-id="forest" tabindex="0" role="button" aria-label="The listening forest"
-        points="0,0 721,0 824,322 902,618 1069,696 773,902 721,1159 618,1438 0,1438"/>
-      <polygon class="spot" data-id="forest" tabindex="0" role="button" aria-label="The listening forest"
-        points="1829,0 2576,0 2576,1438 1958,1438 1906,1159 1932,902 1713,670 1829,335"/>
-      <polygon class="spot" data-id="ground" tabindex="0" role="button" aria-label="The luminous moss"
-        points="618,1438 773,1224 902,1159 1674,1185 1906,1159 1958,1438"/>
-      <path class="spot stem" data-id="stem" tabindex="0" role="button" aria-label="The stem"
-        d="M1513,142 C1443,361 1262,541 1114,773 M1513,142 C1539,361 1552,567 1533,747"/>
       <ellipse class="spot" data-id="left" tabindex="0" role="button" aria-label="The left cherry"
         cx="1037" cy="989" rx="296" ry="286"/>
       <ellipse class="spot" data-id="right" tabindex="0" role="button" aria-label="The right cherry"
         cx="1604" cy="953" rx="283" ry="277"/>
     </svg>
     <div class="tip" id="tip"></div>
-    <div class="hint" id="hint">Hover the picture · click to read</div>
+    <div class="hint" id="hint">Hover a cherry · click to read</div>
   </div>
 </div>
 
@@ -206,38 +193,6 @@
         "Two cherries on one stem is the oldest picture of a pair there is: joined at the top, separate at the bottom."
       ]
     },
-    stem: {
-      eyebrow: "The stem",
-      title: "What joins them",
-      body: [
-        "Example article. The stem is the only straight-ish line in the picture, and it splits in two before it reaches the fruit.",
-        "This is a good place for a short piece about connection, or an index that links to both cherries."
-      ]
-    },
-    sky: {
-      eyebrow: "The sky",
-      title: "The slow spiral",
-      body: [
-        "Example article. Above the trees the sky turns in a wide, patient spiral, with a few stars caught in its arms.",
-        "An opening text could live here: what this place is, and why the reader has arrived."
-      ]
-    },
-    forest: {
-      eyebrow: "The forest",
-      title: "Trees that bend to listen",
-      body: [
-        "Example article. The trees on both sides curve inward toward the cherries, their canopies lit in violet, amber and green.",
-        "Both halves of the forest open the same article. Split them into two entries if the left and right should tell different stories."
-      ]
-    },
-    ground: {
-      eyebrow: "The ground",
-      title: "Luminous moss",
-      body: [
-        "Example article. The floor glows in teal, gold and lilac; tiny flowers hold their own light.",
-        "Good for practical things: credits, a way to get in touch, where the picture came from."
-      ]
-    }
   };
 
   const frame = document.getElementById('frame');
