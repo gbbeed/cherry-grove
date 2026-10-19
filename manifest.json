@@ -1,0 +1,12 @@
+{
+  "name": "Cherry Grove",
+  "short_name": "Cherries",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#0b0a1a",
+  "theme_color": "#0b0a1a",
+  "icons": [
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
